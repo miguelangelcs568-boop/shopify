@@ -1,0 +1,216 @@
+{{ 'nevora-nocturne-home.css' | asset_url | stylesheet_tag }}
+
+<section class="nv-home" data-section-id="{{ section.id }}">
+  <div class="nv-grain" aria-hidden="true"></div>
+
+  <div class="nv-hero">
+    {% assign hero_desktop_image = section.settings.hero_image %}
+    {% assign hero_mobile_image = section.settings.hero_image_mobile | default: hero_desktop_image %}
+    <div
+      class="nv-hero__image"
+      style="--nv-hero-x:{{ section.settings.hero_position_x }}%;--nv-hero-y:{{ section.settings.hero_position_y }}%;{% if hero_desktop_image != blank %}background-image:url('{{ hero_desktop_image | image_url: width: 2600 }}');{% else %}background-image:url('{{ 'nevora-hero-default.png' | asset_url }}');{% endif %}"
+    >
+      <div
+        class="nv-hero__image-mobile"
+        {% if hero_mobile_image != blank %}
+          style="background-image:url('{{ hero_mobile_image | image_url: width: 1800 }}')"
+        {% else %}
+          style="background-image:url('{{ 'nevora-hero-default.png' | asset_url }}')"
+        {% endif %}
+      ></div>
+      <div class="nv-hero__veil"></div>
+    </div>
+    <div class="nv-hero__content page-width">
+      <div class="nv-kicker">{{ section.settings.kicker }}</div>
+      <h1>{{ section.settings.heading }}</h1>
+      <p>{{ section.settings.hero_text }}</p>
+      <div class="nv-hero__actions">
+        <a class="nv-btn nv-btn--solid" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">{{ section.settings.primary_label }}</a>
+        {% if section.settings.secondary_label != blank %}
+          <a class="nv-btn nv-btn--ghost" href="{{ section.settings.secondary_link | default: '#nv-historia' }}">{{ section.settings.secondary_label }} <span>↘</span></a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="nv-hero__bottom page-width">
+      <span>{{ section.settings.hero_label }}</span>
+      <span class="nv-scroll">DESPLAZAR <i></i></span>
+    </div>
+  </div>
+
+  <div class="nv-marquee" aria-hidden="true">
+    <div>CASA <span>✦</span> DESPENSA <span>✦</span> CUIDADO <span>✦</span> LO DEL DÍA <span>✦</span> PAGO AL RECIBIR <span>✦</span> ENVÍO COLOMBIA <span>✦</span> CASA <span>✦</span> DESPENSA <span>✦</span> CUIDADO <span>✦</span> LO DEL DÍA <span>✦</span> PAGO AL RECIBIR <span>✦</span> ENVÍO COLOMBIA <span>✦</span></div>
+  </div>
+
+  <section class="nv-catalogo page-width" id="nv-catalogo">
+    <div class="nv-catalogo__intro nv-reveal">
+      <div>
+        <div class="nv-kicker">CATÁLOGO</div>
+        <h2>{{ section.settings.products_heading }}</h2>
+        <p>{{ section.settings.products_intro }}</p>
+      </div>
+      <div class="nv-catalogo__actions">
+        <a class="nv-btn nv-btn--solid" href="{{ routes.all_products_collection_url }}">Ver todo el catálogo</a>
+        {% if section.settings.collection != blank %}
+          <a class="nv-text-link" href="{{ section.settings.collection.url }}">Ver selección destacada <span>→</span></a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% assign featured_collection = section.settings.collection %}
+    {% if featured_collection == blank or featured_collection.products_count == 0 %}
+      {% assign featured_collection = collections.all %}
+    {% endif %}
+    {% if featured_collection != blank and featured_collection.products_count > 0 %}
+      <div class="nv-catalogo__head">
+        <div>
+          <div class="nv-kicker">{{ section.settings.products_kicker | default: 'CATÁLOGO' }}</div>
+          {% unless featured_collection.handle == 'all' %}
+            <h3>{{ featured_collection.title }}</h3>
+          {% endunless %}
+        </div>
+        <a class="nv-text-link" href="{{ featured_collection.url }}">Ver catálogo completo <span>→</span></a>
+      </div>
+      <div class="nv-product-grid">
+        {% for product in featured_collection.products limit: 12 %}
+          <a class="nv-product nv-reveal" style="--nv-delay:{{ forloop.index0 | times: 0.07 }}s" href="{{ product.url }}">
+            <div class="nv-product__media">
+              {% if product.featured_image %}
+                {{ product.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400,600,800,1000', sizes: '(min-width: 990px) 33vw, 50vw', alt: product.featured_image.alt | default: product.title | escape }}
+              {% else %}
+                <div class="nv-product__placeholder"></div>
+              {% endif %}
+              <span class="nv-product__arrow">↗</span>
+            </div>
+            <div class="nv-product__meta">
+              <span>{{ product.title }}</span>
+              <span>{{ product.price | money }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="nv-empty">
+        <strong>El catálogo se consulta aquí.</strong>
+        <span>Abra la lista completa de productos.</span>
+        <a class="nv-btn nv-btn--solid" href="{{ routes.all_products_collection_url }}">Abrir catálogo</a>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="nv-story page-width" id="nv-historia">
+    <div class="nv-story__media nv-reveal" style="--nv-story-position:{{ section.settings.story_image_position }};">
+      {% if section.settings.story_image != blank %}
+        {{ section.settings.story_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400,600,800,1200', sizes: '(min-width: 990px) 40vw, 90vw', alt: section.settings.story_heading | escape }}
+      {% else %}
+        <img src="{{ 'nevora-story-default.jpg' | asset_url }}" alt="Ritual de cuidado Nevora" loading="lazy" width="800" height="1000">
+      {% endif %}
+    </div>
+    <div class="nv-story__text nv-reveal" style="--nv-delay:.08s">
+      <div class="nv-story__copy">
+        <div class="nv-kicker">{{ section.settings.story_kicker }}</div>
+        <h2>{{ section.settings.story_heading }}</h2>
+      </div>
+      <div class="nv-story__body">
+        <p>{{ section.settings.story_text }}</p>
+        <a class="nv-text-link" href="{{ section.settings.story_link | default: routes.all_products_collection_url }}">{{ section.settings.story_link_label }} <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="nv-manifesto">
+    <div class="page-width nv-manifesto__inner nv-reveal">
+      <div class="nv-manifesto__top">
+        {% if section.settings.manifesto_badge != blank %}
+          <div class="nv-manifesto__badge">
+            {{ section.settings.manifesto_badge | image_url: width: 160 | image_tag: loading: 'lazy', width: 64, height: 64, alt: section.settings.manifesto_kicker | escape }}
+          </div>
+        {% endif %}
+        <div class="nv-kicker">{{ section.settings.manifesto_kicker }}</div>
+      </div>
+      <h2>{{ section.settings.manifesto_heading }}</h2>
+      <div class="nv-manifesto__line"></div>
+      <p>{{ section.settings.manifesto_text }}</p>
+    </div>
+  </section>
+
+  <section class="nv-values page-width">
+    {% for block in section.blocks %}
+      <article class="nv-value nv-reveal" style="--nv-delay:{{ forloop.index0 | times: 0.09 }}s" {{ block.shopify_attributes }}>
+        <div class="nv-value__icon">
+          {% if block.settings.icon != blank %}
+            {{ block.settings.icon | image_url: width: 160 | image_tag: loading: 'lazy', width: 44, height: 44, alt: block.settings.title | escape }}
+          {% else %}
+            <span class="nv-value__mark" aria-hidden="true"></span>
+          {% endif %}
+        </div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </article>
+    {% endfor %}
+  </section>
+
+  <section class="nv-final">
+    <div class="nv-final__image" style="--nv-final-x:{{ section.settings.final_position_x }}%;--nv-final-y:{{ section.settings.final_position_y }}%;{% if section.settings.final_image != blank %}background-image:url('{{ section.settings.final_image | image_url: width: 2400 }}');{% else %}background-image:url('{{ 'nevora-final-default.jpg' | asset_url }}');{% endif %}"></div>
+    <div class="nv-final__veil"></div>
+    <div class="page-width nv-final__content nv-reveal">
+      <div class="nv-kicker">{{ section.settings.final_kicker }}</div>
+      <h2>{{ section.settings.final_heading }}</h2>
+      <a class="nv-btn nv-btn--solid" href="{{ section.settings.final_link | default: routes.all_products_collection_url }}">{{ section.settings.final_label }}</a>
+    </div>
+  </section>
+
+  <a class="nv-floating-catalogo" href="{{ routes.all_products_collection_url }}" aria-label="Abrir catálogo">Catálogo <span>↗</span></a>
+</section>
+
+<noscript>
+  <style>.nv-home .nv-reveal{opacity:1!important;transform:none!important}</style>
+</noscript>
+
+<script src="{{ 'nevora-nocturne-home.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Nevora Nocturne Home",
+  "settings": [
+    {"type":"image_picker","id":"hero_image","label":"Imagen principal","info":"Imagen de escritorio. Puedes reemplazarla cuando quieras desde el editor de temas."},
+    {"type":"image_picker","id":"hero_image_mobile","label":"Imagen principal — móvil","info":"Opcional. Si la dejas vacía se usa la imagen principal."},
+    {"type":"range","id":"hero_position_x","label":"Posición horizontal de la imagen","min":0,"max":100,"step":1,"unit":"%","default":50},
+    {"type":"range","id":"hero_position_y","label":"Posición vertical de la imagen","min":0,"max":100,"step":1,"unit":"%","default":50},
+    {"type":"text","id":"kicker","label":"Etiqueta superior","default":"NEVORA / COLOMBIA"},
+    {"type":"text","id":"heading","label":"Título principal","default":"Cuidado botánico para el cuerpo."},
+    {"type":"textarea","id":"hero_text","label":"Texto principal","default":"Cosmética corporal con extractos de planta y complementos de uso diario. Envío a toda Colombia. Pago al recibir."},
+    {"type":"text","id":"hero_label","label":"Etiqueta hero","default":"LA COLECCIÓN"},
+    {"type":"text","id":"primary_label","label":"Botón principal","default":"Explorar catálogo"},
+    {"type":"url","id":"primary_link","label":"Enlace principal"},
+    {"type":"text","id":"secondary_label","label":"Botón secundario","default":"Conoce la marca"},
+    {"type":"url","id":"secondary_link","label":"Enlace secundario"},
+    {"type":"text","id":"story_kicker","label":"Etiqueta historia","default":"NUESTRA MIRADA"},
+    {"type":"text","id":"story_heading","label":"Título historia","default":"Menos ruido. Más intención."},
+    {"type":"textarea","id":"story_text","label":"Texto historia","default":"Creemos que una marca de bienestar no tiene que gritar para hacerse notar. Seleccionamos cada producto pensando en calidad, claridad y una experiencia que se sienta diferente desde el primer clic."},
+    {"type":"text","id":"story_link_label","label":"Texto enlace historia","default":"Ver el catálogo"},
+    {"type":"url","id":"story_link","label":"Enlace historia"},
+    {"type":"image_picker","id":"story_image","label":"Imagen — Nuestra mirada","info":"Puedes cambiarla desde el editor de temas."},
+    {"type":"select","id":"story_image_position","label":"Posición de imagen — Nuestra mirada","options":[{"value":"center","label":"Centro"},{"value":"top","label":"Arriba"},{"value":"bottom","label":"Abajo"},{"value":"left","label":"Izquierda"},{"value":"right","label":"Derecha"}],"default":"center"},
+    {"type":"collection","id":"collection","label":"Colección destacada"},
+    {"type":"text","id":"products_kicker","label":"Etiqueta productos","default":"SELECCIÓN DESTACADA"},
+    {"type":"text","id":"products_heading","label":"Título productos","default":"Lo que vas a encontrar para tu bienestar"},
+    {"type":"textarea","id":"products_intro","label":"Introducción del catálogo","default":"Cuidado de cuerpo y complementos de uso diario. Para el cuerpo, y para cómo te sientes en él."},
+    {"type":"url","id":"products_link","label":"Enlace productos"},
+    {"type":"text","id":"manifesto_kicker","label":"Etiqueta manifiesto","default":"NUESTRO ESTÁNDAR"},
+    {"type":"text","id":"manifesto_heading","label":"Título manifiesto","default":"La calidad también se siente."},
+    {"type":"textarea","id":"manifesto_text","label":"Texto manifiesto","default":"Presentación sobria. Información clara. Productos seleccionados. Una experiencia diseñada para personas que prefieren elegir con calma."},
+    {"type":"image_picker","id":"manifesto_badge","label":"Sello o certificación (opcional)","info":"Por ejemplo, un sello de registro INVIMA. Se muestra en pequeño junto al texto."},
+    {"type":"image_picker","id":"final_image","label":"Imagen final","info":"Puedes cambiarla desde el editor de temas."},
+    {"type":"range","id":"final_position_x","label":"Posición horizontal — imagen final","min":0,"max":100,"step":1,"unit":"%","default":50},
+    {"type":"range","id":"final_position_y","label":"Posición vertical — imagen final","min":0,"max":100,"step":1,"unit":"%","default":50},
+    {"type":"text","id":"final_kicker","label":"Etiqueta final","default":"DESCUBRE TU RUTINA"},
+    {"type":"text","id":"final_heading","label":"Título final","default":"El catálogo está abierto."},
+    {"type":"text","id":"final_label","label":"Botón final","default":"Ver catálogo"},
+    {"type":"url","id":"final_link","label":"Enlace final"}
+  ],
+  "blocks": [
+    {"type":"value","name":"Valor","settings":[{"type":"image_picker","id":"icon","label":"Ícono o imagen (opcional)","info":"Un ícono pequeño y sencillo funciona mejor que una foto."},{"type":"text","id":"title","label":"Título","default":"Selección consciente"},{"type":"textarea","id":"text","label":"Texto","default":"Productos elegidos por su propuesta, presentación y facilidad de integrar a la rutina."}]}
+  ],
+  "presets": [{"name":"Nevora Nocturne Home","blocks":[{"type":"value"},{"type":"value","settings":{"title":"Diseño sin exceso","text":"Una estética editorial donde cada elemento tiene una razón de estar."}},{"type":"value","settings":{"title":"Claridad primero","text":"Información sencilla para que comprar se sienta fácil y confiable."}}]}]
+}
+{% endschema %}

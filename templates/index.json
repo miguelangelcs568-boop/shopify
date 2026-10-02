@@ -1,0 +1,66 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "nevora-nocturne-home",
+      "blocks": {
+        "value1": {
+          "type": "value",
+          "settings": {
+            "title": "Lo del día",
+            "text": "Lo que se acaba, lo que se estrena y lo que ya sabes que vas a volver a pedir."
+          }
+        },
+        "value3": {
+          "type": "value",
+          "settings": {
+            "title": "Pagas al recibir",
+            "text": "Revisas el pedido en la puerta. Si no llega, no pagas. Envío con guía a Colombia."
+          }
+        }
+      },
+      "block_order": ["value1", "value3"],
+      "settings": {
+        "hero_position_x": 55,
+        "hero_position_y": 42,
+        "kicker": "TIENDA / COLOMBIA",
+        "heading": "Todo lo del día, en un solo pedido.",
+        "hero_text": "Casa, cuidado, despensa y lo que se te olvidó. Precios claros. Pago cuando te llega.",
+        "hero_label": "CATÁLOGO",
+        "primary_label": "Ver productos",
+        "primary_link": "",
+        "secondary_label": "Cómo comprar",
+        "secondary_link": "",
+        "story_kicker": "LA TIENDA",
+        "story_heading": "Un mostrador, no un discurso.",
+        "story_text": "Aquí se vende lo que se usa. Sin categoría de moda ni de nicho: lo que entra al catálogo tiene precio, foto y forma de pedirlo.\n\nEl pedido sale con guía. Pagas al recibirlo.",
+        "story_link_label": "Abrir el catálogo",
+        "story_link": "",
+        "story_image_position": "center",
+        "collection": "",
+        "products_kicker": "AHORA",
+        "products_heading": "Lo que hay para llevar",
+        "products_intro": "Una selección del catálogo. Entra, elige y pide. El resto se suma cuando hay stock.",
+        "products_link": "",
+        "manifesto_kicker": "CÓMO SE COMPRA",
+        "manifesto_heading": "Claro de entrada.",
+        "manifesto_text": "Precio visible. Envío a Colombia. Pago contra entrega. Sin letra chica de bienestar.",
+        "final_position_x": 50,
+        "final_position_y": 40,
+        "final_kicker": "SIGUIENTE",
+        "final_heading": "El catálogo está abierto.",
+        "final_label": "Ver productos",
+        "final_link": ""
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,53 @@
+{{ 'nevora-nocturne.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  Solo pedido / contraentrega.
+  El modo de uso vive en la descripción de cada producto, no aquí.
+{%- endcomment -%}
+
+<section class="nv-pdp" id="nv-pdp-venta">
+  <div class="nv-pdp__wrap page-width">
+
+    <div class="nv-pdp__steps">
+      <p class="nv-eyebrow">Cómo pides — sin pagar adelantado</p>
+      <ol>
+        <li><strong>Dejas tus datos</strong> Nombre, cédula, dirección y celular.</li>
+        <li><strong>Te llega con guía</strong> Envío gratis a tu ciudad.</li>
+        <li><strong>Revisas y pagas</strong> En la puerta. Si no llega, no pagas.</li>
+      </ol>
+    </div>
+
+    <div class="nv-pdp__faq">
+      <p class="nv-eyebrow">Antes de pedir</p>
+      <details open>
+        <summary>¿Y si pido y es una estafa?</summary>
+        <p>No pagas adelantado. El pedido llega a tu dirección, lo revisas y pagas ahí. Envío con seguimiento.</p>
+      </details>
+      <details>
+        <summary>¿El envío tiene costo?</summary>
+        <p>No. Envío gratis a tu ciudad, con guía.</p>
+      </details>
+      <details>
+        <summary>¿Es un medicamento?</summary>
+        <p>No. Es un producto de catálogo. La ficha dice qué es y cómo se usa.</p>
+      </details>
+    </div>
+
+    <div class="nv-pdp__close">
+      <p class="nv-pdp__close-line">Precio claro. Pagas cuando llega.</p>
+      <a class="button nv-pdp__cta" href="#nv-buy">Pedir y pagar al recibir</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Nevora ficha de venta",
+  "tag": "section",
+  "class": "section-nv-pdp",
+  "settings": [],
+  "presets": [
+    { "name": "Nevora ficha de venta" }
+  ]
+}
+{% endschema %}

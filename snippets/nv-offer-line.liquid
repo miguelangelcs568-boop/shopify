@@ -1,0 +1,29 @@
+{%- comment -%}
+  Oferta bajo el precio del tema. No vuelve a pintar el monto:
+  el precio vive una sola vez en el bloque price de Horizon.
+{%- endcomment -%}
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign price = variant.price
+  assign compare = variant.compare_at_price
+  assign handle = product.handle
+  assign is_combo = false
+  if handle == 'combo-termico-cannabis-cbd' or handle contains 'combo-termico'
+    assign is_combo = true
+  endif
+  assign save_amount = 0
+  if compare != blank and compare > price
+    assign save_amount = compare | minus: price
+  endif
+-%}
+<div class="nv-offer" id="nv-buy">
+  {%- if save_amount > 0 -%}
+    <p class="nv-offer__save-only">
+      <span class="nv-offer__save">Ahorras {{ save_amount | money_without_trailing_zeros }}</span>
+    </p>
+  {%- endif -%}
+  {%- if is_combo -%}
+    <p class="nv-offer__pack">3 piezas · 150 ml + 60 ml + gel 110 g · no es un solo envase</p>
+  {%- endif -%}
+  <p class="nv-offer__risk">Pagas al recibirlo. Lo revisas en la puerta. Envío gratis en Colombia.</p>
+</div>
