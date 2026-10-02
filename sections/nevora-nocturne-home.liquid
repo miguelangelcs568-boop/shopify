@@ -8,14 +8,14 @@
     {% assign hero_mobile_image = section.settings.hero_image_mobile | default: hero_desktop_image %}
     <div
       class="nv-hero__image"
-      style="--nv-hero-x:{{ section.settings.hero_position_x }}%;--nv-hero-y:{{ section.settings.hero_position_y }}%;{% if hero_desktop_image != blank %}background-image:url('{{ hero_desktop_image | image_url: width: 2600 }}');{% else %}background-image:url('{{ 'nevora-hero-default.png' | asset_url }}');{% endif %}"
+      style="--nv-hero-x:{{ section.settings.hero_position_x }}%;--nv-hero-y:{{ section.settings.hero_position_y }}%;{% if hero_desktop_image != blank %}background-image:url('{{ hero_desktop_image | image_url: width: 2600 }}');{% else %}background-image:url('{{ 'nv-hero.jpg' | asset_url }}');{% endif %}"
     >
       <div
         class="nv-hero__image-mobile"
         {% if hero_mobile_image != blank %}
           style="background-image:url('{{ hero_mobile_image | image_url: width: 1800 }}')"
         {% else %}
-          style="background-image:url('{{ 'nevora-hero-default.png' | asset_url }}')"
+          style="background-image:url('{{ 'nv-hero.jpg' | asset_url }}')"
         {% endif %}
       ></div>
       <div class="nv-hero__veil"></div>
@@ -38,7 +38,17 @@
   </div>
 
   <div class="nv-marquee" aria-hidden="true">
-    <div>CASA <span>✦</span> DESPENSA <span>✦</span> CUIDADO <span>✦</span> LO DEL DÍA <span>✦</span> PAGO AL RECIBIR <span>✦</span> ENVÍO COLOMBIA <span>✦</span> CASA <span>✦</span> DESPENSA <span>✦</span> CUIDADO <span>✦</span> LO DEL DÍA <span>✦</span> PAGO AL RECIBIR <span>✦</span> ENVÍO COLOMBIA <span>✦</span></div>
+    <div>CASA · ROPA · DESPENSA · PAGO AL RECIBIR · ENVÍO COLOMBIA · CASA · ROPA · DESPENSA · PAGO AL RECIBIR · ENVÍO COLOMBIA · </div>
+  </div>
+
+  <div class="nv-cities" aria-label="Cobertura">
+    <span>Cali</span>
+    <span>Bogotá</span>
+    <span>Medellín</span>
+    <span>Barranquilla</span>
+    <span>Bucaramanga</span>
+    <span>Pereira</span>
+    <span>Resto del país</span>
   </div>
 
   <section class="nv-catalogo page-width" id="nv-catalogo">
@@ -102,7 +112,7 @@
       {% if section.settings.story_image != blank %}
         {{ section.settings.story_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '400,600,800,1200', sizes: '(min-width: 990px) 40vw, 90vw', alt: section.settings.story_heading | escape }}
       {% else %}
-        <img src="{{ 'nevora-story-default.jpg' | asset_url }}" alt="Ritual de cuidado Nevora" loading="lazy" width="800" height="1000">
+        <img src="{{ 'nv-story.jpg' | asset_url }}" alt="Interior de tienda" loading="lazy" width="1200" height="800">
       {% endif %}
     </div>
     <div class="nv-story__text nv-reveal" style="--nv-delay:.08s">
@@ -150,7 +160,7 @@
   </section>
 
   <section class="nv-final">
-    <div class="nv-final__image" style="--nv-final-x:{{ section.settings.final_position_x }}%;--nv-final-y:{{ section.settings.final_position_y }}%;{% if section.settings.final_image != blank %}background-image:url('{{ section.settings.final_image | image_url: width: 2400 }}');{% else %}background-image:url('{{ 'nevora-final-default.jpg' | asset_url }}');{% endif %}"></div>
+    <div class="nv-final__image" style="--nv-final-x:{{ section.settings.final_position_x }}%;--nv-final-y:{{ section.settings.final_position_y }}%;{% if section.settings.final_image != blank %}background-image:url('{{ section.settings.final_image | image_url: width: 2400 }}');{% else %}background-image:url('{{ 'nv-hero.jpg' | asset_url }}');{% endif %}"></div>
     <div class="nv-final__veil"></div>
     <div class="page-width nv-final__content nv-reveal">
       <div class="nv-kicker">{{ section.settings.final_kicker }}</div>

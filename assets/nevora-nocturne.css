@@ -763,3 +763,11 @@ body[data-template="collection"] .badge {
   background: var(--nv-carbon);
   color: #f6f1e8;
 }
+
+:root{--nv-ink:#f3f1ec;--nv-ink-2:#e7e2d8;--nv-panel:#fff;--nv-cream:#121212;--nv-muted:#5c574e;--nv-sage:#121212;--nv-sage-bright:#c2410c;--nv-carbon:#121212;--nv-gold:#c2410c;--nv-line:rgba(18,18,18,.12)}
+body{background:#f3f1ec!important;color:#121212!important}
+body::before,body::after{content:none!important}
+.header__row{background:rgba(18,18,18,.92)!important}
+.header__row a,.header__row button,.header__row .icon{color:#f6f3ee!important}
+.header-announcements{background:#c2410c!important}
+.buy-buttons-block .add-to-cart-button.button,.product-form-buttons .add-to-cart-button.button{background:#121212!important;color:#f6f3ee!important;border-color:#121212!important}
