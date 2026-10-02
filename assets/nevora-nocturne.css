@@ -771,3 +771,9 @@ body::before,body::after{content:none!important}
 .header__row a,.header__row button,.header__row .icon{color:#f6f3ee!important}
 .header-announcements{background:#c2410c!important}
 .buy-buttons-block .add-to-cart-button.button,.product-form-buttons .add-to-cart-button.button{background:#121212!important;color:#f6f3ee!important;border-color:#121212!important}
+:root{--nv-ink:#fff;--nv-cream:#111;--nv-muted:#555;--nv-sage:#111;--nv-sage-bright:#e11d48;--nv-carbon:#111;--nv-gold:#e11d48}
+body{background:#fff!important;color:#111!important}
+.header__row{background:#fff!important;border-bottom:1px solid rgba(0,0,0,.06)}
+.header__row a,.header__row button,.header__row .icon{color:#111!important}
+.header-announcements{background:#111!important}
+.header-announcements,.header-announcements *{color:#fff!important}

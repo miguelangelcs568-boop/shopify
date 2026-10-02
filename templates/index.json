@@ -15,8 +15,8 @@
         "value1": {
           "type": "value",
           "settings": {
-            "title": "Ropa, casa, despensa",
-            "text": "Tres líneas de producto. Nada de nicho. Lo que se puede fotografiar y enviar."
+            "title": "Cuatro pasillos",
+            "text": "Moda, casa, belleza y tecnología. Entras, eliges y el pedido sale con guía."
           }
         },
         "value3": {
@@ -31,24 +31,24 @@
       "settings": {
         "hero_position_x": 55,
         "hero_position_y": 42,
-        "kicker": "MOSTRADOR / COLOMBIA",
-        "heading": "Ropa, casa y despensa. Un solo pedido.",
-        "hero_text": "Tres pasillos: lo que te pones, lo que usas en casa y lo que se acaba. Precio en la ficha. Pago en la puerta.",
+        "kicker": "ESTA SEMANA",
+        "heading": "Lo nuevo ya está en la tienda.",
+        "hero_text": "Moda, casa, belleza y tecnología. El precio está en la ficha. Pagas cuando te llega.",
         "hero_label": "CATÁLOGO",
         "primary_label": "Ver productos",
         "primary_link": "",
         "secondary_label": "Cómo comprar",
         "secondary_link": "",
         "story_kicker": "LA TIENDA",
-        "story_heading": "El pedido sale de Cali. Llega al resto del país.",
-        "story_text": "Despachamos desde el Valle. Cubrimos Cali, Bogotá, Medellín, Barranquilla, Bucaramanga, Pereira y el resto de Colombia con guía.\n\nRevisas el paquete. Pagas ahí. Si no llega, no hay cobro.",
+        "story_heading": "Llega a la puerta. Pagas ahí.",
+        "story_text": "El mensajero entrega en Cali, Bogotá, Medellín, Barranquilla, Bucaramanga, Pereira y el resto del país.\n\nAbres el paquete, lo revisas y pagas. Si no llega, no hay cobro.",
         "story_link_label": "Abrir el catálogo",
         "story_link": "",
         "story_image_position": "center",
         "collection": "",
         "products_kicker": "AHORA",
-        "products_heading": "En el mostrador",
-        "products_intro": "Doce piezas a la vista. El catálogo completo está un clic más abajo.",
+        "products_heading": "Recién llegados",
+        "products_intro": "Lo que hay ahora en el catálogo. El resto entra cuando hay stock.",
         "products_link": "",
         "manifesto_kicker": "CÓMO SE COMPRA",
         "manifesto_heading": "Tres reglas.",
@@ -56,7 +56,7 @@
         "final_position_x": 50,
         "final_position_y": 40,
         "final_kicker": "SIGUIENTE",
-        "final_heading": "Sigue en el catálogo.",
+        "final_heading": "Sigue comprando.",
         "final_label": "Ver productos",
         "final_link": ""
       }
