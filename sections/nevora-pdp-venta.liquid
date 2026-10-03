@@ -1,53 +1,97 @@
 {{ 'nevora-nocturne.css' | asset_url | stylesheet_tag }}
 
-{%- comment -%}
-  Solo pedido / contraentrega.
-  El modo de uso vive en la descripción de cada producto, no aquí.
-{%- endcomment -%}
-
 <section class="nv-pdp" id="nv-pdp-venta">
   <div class="nv-pdp__wrap page-width">
-
-    <div class="nv-pdp__steps">
-      <p class="nv-eyebrow">Cómo pides — sin pagar adelantado</p>
-      <ol>
-        <li><strong>Dejas tus datos</strong> Nombre, cédula, dirección y celular.</li>
-        <li><strong>Te llega con guía</strong> Envío gratis a tu ciudad.</li>
-        <li><strong>Revisas y pagas</strong> En la puerta. Si no llega, no pagas.</li>
+    <div class="nv-guide">
+      <p class="nv-eyebrow">Cómo pedir · pago contra entrega</p>
+      <h2>No pagas ahora. Pagas cuando el pedido llega.</h2>
+      <ol class="nv-guide__steps">
+        <li>
+          <strong>Agregar al carrito</strong>
+          <span>En esta página, elige la cantidad y pulsa Agregar al carrito.</span>
+        </li>
+        <li>
+          <strong>Ir al carrito</strong>
+          <span>Abre el carrito y revisa el producto y el total.</span>
+        </li>
+        <li>
+          <strong>Pagar ahora</strong>
+          <span>Pulsa Pagar ahora. No te cobra en ese momento.</span>
+        </li>
+        <li>
+          <strong>Tus datos</strong>
+          <span>Nombre, cédula, celular, ciudad y dirección de entrega.</span>
+        </li>
+        <li>
+          <strong>Método de pago</strong>
+          <span>En método de pago elige Pago contra entrega. Confirmas el pedido y listo.</span>
+        </li>
       </ol>
-    </div>
-
-    <div class="nv-pdp__faq">
-      <p class="nv-eyebrow">Antes de pedir</p>
-      <details open>
-        <summary>¿Y si pido y es una estafa?</summary>
-        <p>No pagas adelantado. El pedido llega a tu dirección, lo revisas y pagas ahí. Envío con seguimiento.</p>
-      </details>
-      <details>
-        <summary>¿El envío tiene costo?</summary>
-        <p>No. Envío gratis a tu ciudad, con guía.</p>
-      </details>
-      <details>
-        <summary>¿Es un medicamento?</summary>
-        <p>No. Es un producto de catálogo. La ficha dice qué es y cómo se usa.</p>
-      </details>
-    </div>
-
-    <div class="nv-pdp__close">
-      <p class="nv-pdp__close-line">Precio claro. Pagas cuando llega.</p>
-      <a class="button nv-pdp__cta" href="#nv-buy">Pedir y pagar al recibir</a>
+      <p class="nv-guide__note">El mensajero llega con guía. Revisas el paquete y pagas en la puerta. Si no llega, no hay cobro.</p>
+      <a class="button nv-pdp__cta" href="#nv-buy">Agregar y pagar al recibir</a>
     </div>
   </div>
 </section>
 
+{% stylesheet %}
+  .nv-guide {
+    margin: 28px 0 48px;
+    padding: 28px;
+    border: 1px solid rgba(17,17,17,.1);
+    border-radius: 16px;
+    background: #fff;
+  }
+  .nv-guide h2 {
+    margin: 6px 0 18px;
+    font-size: clamp(26px, 3vw, 36px);
+    letter-spacing: -.03em;
+    line-height: 1.1;
+  }
+  .nv-guide__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .nv-guide__steps li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 4px 12px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(17,17,17,.08);
+  }
+  .nv-guide__steps li::before {
+    content: counter(step);
+    counter-increment: step;
+  }
+  .nv-guide__steps { counter-reset: step; }
+  .nv-guide__steps li::before {
+    grid-row: 1 / span 2;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 650;
+  }
+  .nv-guide__steps strong { font-size: 16px; }
+  .nv-guide__steps span { color: #444; font-size: 14px; }
+  .nv-guide__note { margin: 16px 0; color: #333; }
+  .nv-pdp__cta { margin-top: 8px; }
+{% endstylesheet %}
+
 {% schema %}
 {
-  "name": "Nevora ficha de venta",
+  "name": "Guía contra entrega",
   "tag": "section",
   "class": "section-nv-pdp",
   "settings": [],
   "presets": [
-    { "name": "Nevora ficha de venta" }
+    { "name": "Guía contra entrega" }
   ]
 }
 {% endschema %}

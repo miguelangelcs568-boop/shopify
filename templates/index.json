@@ -16,7 +16,7 @@
           "type": "value",
           "settings": {
             "title": "Cuatro pasillos",
-            "text": "Moda, casa, belleza y tecnología. Entras, eliges y el pedido sale con guía."
+            "text": "Moda, casa y belleza. Entras, eliges y el pedido sale con guía."
           }
         },
         "value3": {
@@ -33,15 +33,15 @@
         "hero_position_y": 42,
         "kicker": "ESTA SEMANA",
         "heading": "Lo nuevo ya está en la tienda.",
-        "hero_text": "Moda, casa, belleza y tecnología. El precio está en la ficha. Pagas cuando te llega.",
+        "hero_text": "Moda, casa y belleza. El precio está en la ficha. Pagas cuando te llega.",
         "hero_label": "CATÁLOGO",
         "primary_label": "Ver productos",
         "primary_link": "",
         "secondary_label": "Cómo comprar",
         "secondary_link": "",
         "story_kicker": "LA TIENDA",
-        "story_heading": "Llega a la puerta. Pagas ahí.",
-        "story_text": "El mensajero entrega en Cali, Bogotá, Medellín, Barranquilla, Bucaramanga, Pereira y el resto del país.\n\nAbres el paquete, lo revisas y pagas. Si no llega, no hay cobro.",
+        "story_heading": "Pagas cuando te llega.",
+        "story_text": "Cada producto sale del proveedor que lo tiene, en su ciudad.\n\nAbres el paquete, lo revisas y pagas. Si no llega, no hay cobro.",
         "story_link_label": "Abrir el catálogo",
         "story_link": "",
         "story_image_position": "center",
