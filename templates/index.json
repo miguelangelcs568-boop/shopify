@@ -15,8 +15,8 @@
         "value1": {
           "type": "value",
           "settings": {
-            "title": "Cuatro pasillos",
-            "text": "Moda, casa y belleza. Entras, eliges y el pedido sale con guía."
+            "title": "Para perros y gatos",
+            "text": "Alimento, juguetes y aseo. Eliges y el pedido sale del proveedor."
           }
         },
         "value3": {
@@ -31,24 +31,24 @@
       "settings": {
         "hero_position_x": 55,
         "hero_position_y": 42,
-        "kicker": "ESTA SEMANA",
-        "heading": "Lo nuevo ya está en la tienda.",
-        "hero_text": "Moda, casa y belleza. El precio está en la ficha. Pagas cuando te llega.",
+        "kicker": "PARA ELLOS",
+        "heading": "Lo que tu mascota usa todos los días.",
+        "hero_text": "Comida, juguetes, camas y cuidado. Precio claro. Pagas cuando llega.",
         "hero_label": "CATÁLOGO",
         "primary_label": "Ver productos",
         "primary_link": "",
         "secondary_label": "Cómo comprar",
         "secondary_link": "",
         "story_kicker": "LA TIENDA",
-        "story_heading": "Pagas cuando te llega.",
-        "story_text": "Cada producto sale del proveedor que lo tiene, en su ciudad.\n\nAbres el paquete, lo revisas y pagas. Si no llega, no hay cobro.",
+        "story_heading": "Llega a casa. Pagas ahí.",
+        "story_text": "Cada producto sale del proveedor que lo tiene.\n\nRevisas el paquete y pagas. Si no llega, no hay cobro.",
         "story_link_label": "Abrir el catálogo",
         "story_link": "",
         "story_image_position": "center",
         "collection": "",
         "products_kicker": "AHORA",
-        "products_heading": "Recién llegados",
-        "products_intro": "Lo que hay ahora en el catálogo. El resto entra cuando hay stock.",
+        "products_heading": "Para tu mascota",
+        "products_intro": "Lo que hay ahora. Comida, juguetes y cuidado.",
         "products_link": "",
         "manifesto_kicker": "CÓMO SE COMPRA",
         "manifesto_heading": "Tres reglas.",
@@ -56,7 +56,7 @@
         "final_position_x": 50,
         "final_position_y": 40,
         "final_kicker": "SIGUIENTE",
-        "final_heading": "Sigue comprando.",
+        "final_heading": "Ver más para ellos.",
         "final_label": "Ver productos",
         "final_link": ""
       }
